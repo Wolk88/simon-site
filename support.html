@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SiMon - Support</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem;
+    color: #1c1c1e; background: #fff;
+  }
+  h1 { font-size: 1.9rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.5rem; }
+  h3 { font-size: 1rem; margin-top: 1.75rem; }
+  .updated { color: #6b6b70; margin-top: 0; }
+  .lede { font-size: 1.1rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .4rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em;
+         background: #f2f2f4; padding: .1rem .35rem; border-radius: 4px; }
+  a { color: #0a58ca; }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid #e3e3e6;
+           color: #6b6b70; font-size: .9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8ea; background: #131315; }
+    .updated, footer { color: #9a9aa0; }
+    code { background: #232327; }
+    a { color: #6ea8fe; }
+    footer { border-top-color: #2c2c30; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Support</h1>
+<p class="updated">SiMon - System Monitor</p>
+
+<p class="lede">SiMon shows what your Mac is doing, right in the menu bar: processor
+and memory load, graphics and Neural Engine activity, temperatures and fan speed.
+Click any metric for a panel with recent history and details.</p>
+
+<h2>Requirements</h2>
+<ul>
+  <li>macOS 14 or later</li>
+  <li>A Mac with Apple Silicon (M1 or newer)</li>
+</ul>
+
+<h2>Common questions</h2>
+
+<h3>The fans show "off". Is the app broken?</h3>
+<p>No. On MacBook Pro models the system stops the fans completely while the machine
+is cool, and the hardware reports both current and target speed as zero. SiMon
+writes "off" rather than "0" so the reading does not look like a failed sensor.
+Put the Mac under sustained load and the fans will spin up, with the real speed
+shown in place of "off".</p>
+
+<h3>Some temperatures are missing</h3>
+<p>Sensor names differ between Apple chips. SiMon asks the hardware which sensors
+exist and shows only those that answer with a plausible reading. If a sensor is not
+present on your Mac, its value is left out instead of being invented. On a Mac
+without fans the fan reading is absent for the same reason.</p>
+
+<h3>The Neural Engine always shows 0.0W</h3>
+<p>That is usually correct. The Neural Engine draws power only when an app runs a
+machine learning model. It stays at zero during ordinary work and rises when, for
+example, Photos analyses a library or an app performs image recognition.</p>
+
+<h3>The menu bar block is too wide</h3>
+<p>Open Settings and turn off the metrics you do not need, each in its own section.
+You can also make the graphs narrower under General, down to 12 pixels.</p>
+
+<h3>How do I start the app automatically?</h3>
+<p>Settings, General, "Launch at login".</p>
+
+<h3>How do I remove the app?</h3>
+<p>Quit it from the panel and drag it to the Trash. It leaves nothing else behind
+apart from its preferences, which macOS removes with the app.</p>
+
+<h2>Reporting a problem</h2>
+<p>If a metric looks wrong, the most useful thing you can send is the output of the
+app's diagnostic mode. Open Terminal and run:</p>
+<p><code>/Applications/SiMon.app/Contents/MacOS/SiMon --dump</code></p>
+<p>It prints every reading once and exits. Include that output, your Mac model and
+your macOS version in your message.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:simon_app@mail.ru">simon_app@mail.ru</a></p>
+
+<footer>
+SiMon - System Monitor for Apple Silicon Macs.
+</footer>
+
+</body>
+</html>

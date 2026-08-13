@@ -41,6 +41,38 @@
 <p class="lede">Every release of SiMon, newest first, described in plain terms.
 The version you are running is shown at the bottom of Settings, under General.</p>
 
+<h2>Version 1.2.0</h2>
+<p class="date">13 August 2026</p>
+
+<h3>History now survives a restart</h3>
+<p>Metrics are kept for a fixed stretch of time rather than a fixed number of samples,
+so the panel always shows the last ten minutes no matter how often SiMon polls. A day
+of history is also written to disk, which makes slow problems like a memory leak
+visible across restarts.</p>
+
+<h3>Only one copy runs at a time</h3>
+<p>Launching SiMon while it is already running now brings the existing copy forward
+instead of adding a second set of readings to the menu bar.</p>
+
+<h3>Honest scale for the Neural Engine graph</h3>
+<p>The graph used to be drawn against a fixed 8 W ceiling borrowed from the M1. It is
+now scaled to the highest power draw actually seen, and the caption tells you what
+that peak is. On this machine the real peak under a machine learning workload is
+closer to 2.8 W, so activity that used to look flat is now clearly visible.</p>
+
+<h3>Signing fixed</h3>
+<p>The notarisation ticket is now attached to the application itself, not only to the
+disk image, so macOS can verify SiMon without an internet connection.</p>
+
+<h3>This page</h3>
+<p>Release notes now have a home, and Settings has a "What's new" link that brings you
+here.</p>
+
+<h3>Apple Silicon only</h3>
+<p>SiMon requires a Mac with Apple Silicon. Intel Macs were never really supported -
+the Neural Engine, the temperature sensors and the split between efficiency and
+performance cores do not exist there - and the requirement is now stated plainly.</p>
+
 <h2>Version 1.1.0</h2>
 <p class="date">13 August 2026</p>
 

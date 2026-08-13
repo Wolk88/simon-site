@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SiMon - What's New</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem;
+    color: #1c1c1e; background: #fff;
+  }
+  h1 { font-size: 1.9rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.5rem; }
+  h3 { font-size: 1rem; margin-top: 1.75rem; }
+  .updated { color: #6b6b70; margin-top: 0; }
+  .lede { font-size: 1.1rem; }
+  .date { color: #6b6b70; font-size: .9rem; margin-top: .1rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .4rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em;
+         background: #f2f2f4; padding: .1rem .35rem; border-radius: 4px; }
+  a { color: #0a58ca; }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid #e3e3e6;
+           color: #6b6b70; font-size: .9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8ea; background: #131315; }
+    .updated, .date, footer { color: #9a9aa0; }
+    code { background: #232327; }
+    a { color: #6ea8fe; }
+    footer { border-top-color: #2c2c30; }
+  }
+</style>
+</head>
+<body>
+
+<h1>What's New</h1>
+<p class="updated">SiMon - System Monitor</p>
+
+<p class="lede">Every release of SiMon, newest first, described in plain terms.
+The version you are running is shown at the bottom of Settings, under General.</p>
+
+<h2>Version 1.1.0</h2>
+<p class="date">13 August 2026</p>
+
+<h3>Processor load split into apps and system</h3>
+<p>The CPU reading now separates the work your own apps are doing from the work
+macOS is doing on their behalf. When the machine feels busy for no obvious reason,
+this shows at a glance whether an app or the system is behind it. The per-core bars
+also adapt their thickness to how many cores your Mac has, so they stay readable
+from an 8-core chip up to a 64-core one.</p>
+
+<h3>Memory and battery temperatures</h3>
+<p>Two more sensors joined the temperature readings, and you can now pick which of
+them appear in the menu bar. Sensor names differ between Apple chips, so SiMon asks
+the hardware what actually exists and shows only sensors that answer with a
+plausible reading - nothing is invented to fill a gap.</p>
+
+<h3>An honest Neural Engine reading</h3>
+<p>The Neural Engine used to be shown as a percentage. macOS does not publish one,
+so that number was our own estimate and it has been removed: the reading is now
+power draw in watts, plainly labelled as activity rather than load. The metric is
+also off in the menu bar by default, since it sits at zero during ordinary work.
+On M5 and later, part of the AI workload runs on accelerators inside the GPU cores
+and will not raise this reading at all - Settings says so too.</p>
+
+<h3>Built-in stress test</h3>
+<p>A load generator with ready-made presets for processor, memory and graphics,
+plus a report of what the machine did while it ran. Useful for checking that a
+sensor really responds to load, for hearing when the fans come in, and for
+comparing one Mac against another. It can also be started from the terminal.</p>
+
+<h3>Settings organised by metric</h3>
+<p>Settings were rebuilt around the things being measured. Each metric - CPU, RAM,
+GPU, Neural Engine, battery, fans - now has its own section holding everything
+about it: menu bar visibility, graph colour, temperature. General keeps the
+settings that apply to the whole app.</p>
+
+<h3>Version numbers</h3>
+<p>The app now carries a proper version and build number and shows them in
+Settings, under General. This page arrived with them, so there is somewhere to look
+up what changed.</p>
+
+<h2>Version 1.0</h2>
+<p class="date">9 August 2026</p>
+
+<p>The first release. SiMon puts your Mac's vital signs in the menu bar and stays
+out of the way otherwise.</p>
+
+<ul>
+  <li>Processor, memory, graphics and Neural Engine activity, component
+      temperatures and fan speed, each with a number and a small live graph.</li>
+  <li>A panel on click with recent history, per-core bars and memory detail.</li>
+  <li>Settings for which metrics appear, how often they are sampled, graph colours
+      and width, light or dark appearance, and launching at login.</li>
+  <li>A diagnostic mode - <code>SiMon --dump</code> - that prints every reading once
+      and exits, for reporting a suspicious value.</li>
+  <li>No network access of any kind, and no data collection. See the
+      <a href="privacy.html">Privacy Policy</a>.</li>
+</ul>
+
+<footer>
+SiMon - System Monitor for Apple Silicon Macs.
+</footer>
+
+</body>
+</html>

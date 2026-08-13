@@ -67,6 +67,13 @@ without fans the fan reading is absent for the same reason.</p>
 machine learning model. It stays at zero during ordinary work and rises when, for
 example, Photos analyses a library or an app performs image recognition.</p>
 
+<h3>The Neural Engine reading is watts, not a percentage - why?</h3>
+<p>macOS does not expose a utilization figure for the Neural Engine, only its power
+draw, so that is what SiMon shows. Treat it as an activity indicator, not a load
+percentage. It is most meaningful on M1 through M4 chips. On M5 and later, Apple
+moved part of the AI workload onto accelerators built into the GPU cores, so some
+machine learning activity will not raise this reading at all.</p>
+
 <h3>The menu bar block is too wide</h3>
 <p>Open Settings and turn off the metrics you do not need, each in its own section.
 You can also make the graphs narrower under General, down to 12 pixels.</p>

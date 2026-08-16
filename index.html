@@ -3,39 +3,106 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SiMon - System Monitor</title>
+<title>SiMon - System Monitor for Apple Silicon</title>
+<meta name="description" content="A menu bar system monitor for Apple Silicon Macs: processor, memory, graphics, Neural Engine, temperatures and fan speed. Free, no network access, no data collection.">
+<meta property="og:title" content="SiMon - System Monitor for Apple Silicon">
+<meta property="og:description" content="Processor, memory, graphics, Neural Engine, temperatures and fans - in the menu bar. Free and offline.">
+<meta property="og:type" content="website">
 <style>
   :root { color-scheme: light dark; }
   body {
     font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    max-width: 44rem; margin: 0 auto; padding: 4rem 1.25rem 5rem;
+    max-width: 46rem; margin: 0 auto; padding: 3.5rem 1.25rem 5rem;
     color: #1c1c1e; background: #fff;
   }
-  h1 { font-size: 2rem; margin-bottom: .25rem; }
+  h1 { font-size: 2.1rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.25rem; margin-top: 3rem; }
   .tagline { font-size: 1.15rem; color: #6b6b70; margin-top: 0; }
-  ul.links { list-style: none; padding: 0; margin-top: 2.5rem; }
-  ul.links li { margin: .75rem 0; }
+  .shot { display: block; width: 340px; max-width: 100%; border-radius: 10px;
+          margin: 2rem auto .5rem; border: 1px solid #e3e3e6; }
+  .caption { color: #6b6b70; font-size: .9rem; margin-top: 0; text-align: center; }
+  .cta { display: inline-block; background: #0a58ca; color: #fff; text-decoration: none;
+         padding: .7rem 1.4rem; border-radius: 8px; font-weight: 600; margin-top: .5rem; }
+  .cta:hover { background: #0a4fb4; }
+  .meta { color: #6b6b70; font-size: .9rem; margin-top: .6rem; }
+  table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid #e3e3e6;
+           vertical-align: top; }
+  th { font-weight: 600; }
+  td.yes { color: #1a7f37; }
+  ul.links { list-style: none; padding: 0; margin-top: 1rem; }
+  ul.links li { margin: .6rem 0; }
   a { color: #0a58ca; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em;
+         background: #f2f2f4; padding: .1rem .35rem; border-radius: 4px; }
   footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid #e3e3e6;
            color: #6b6b70; font-size: .9rem; }
   @media (prefers-color-scheme: dark) {
     body { color: #e8e8ea; background: #131315; }
-    .tagline, footer { color: #9a9aa0; }
+    .tagline, .caption, .meta, footer { color: #9a9aa0; }
     a { color: #6ea8fe; }
+    .cta { background: #2d6ee0; }
+    .cta:hover { background: #3d7cf0; }
+    code { background: #232327; }
+    .shot, th, td { border-color: #2c2c30; }
     footer { border-top-color: #2c2c30; }
+    td.yes { color: #4ac26b; }
   }
 </style>
 </head>
 <body>
+
 <h1>SiMon</h1>
 <p class="tagline">A system monitor for Apple Silicon Macs, in the menu bar.
 Processor and memory, graphics, Neural Engine, temperatures and fans.</p>
+
+<img class="shot" src="screenshot-panel.png" alt="The SiMon panel showing processor, memory, graphics and Neural Engine readings with temperatures and fan speed">
+<p class="caption">One click on the menu bar shows the last ten minutes of everything.</p>
+
+<p><a class="cta" href="https://github.com/Wolk88/simon-site/releases/latest">Download SiMon</a></p>
+<p class="meta">Free. Requires a Mac with Apple Silicon and macOS 14 or later.
+Signed and notarised by Apple, so it opens without warnings.</p>
+
+<h2>What it shows</h2>
+<table>
+  <tr><th>Processor</th><td>Load split into applications and system, with a bar for every
+      core - efficiency and performance clusters shown apart.</td></tr>
+  <tr><th>Memory</th><td>App, wired, compressed and swap, plus the memory pressure state
+      macOS itself uses to decide when things are getting tight.</td></tr>
+  <tr><th>Graphics</th><td>How busy the GPU cores are.</td></tr>
+  <tr><th>Neural Engine</th><td>Power draw in watts. macOS publishes no utilisation figure
+      for it, so SiMon reports what the engine is actually drawing and says so plainly.</td></tr>
+  <tr><th>Temperatures</th><td>Processor, graphics, memory and battery, read from the
+      hardware. Sensors differ between chips, so SiMon asks yours what exists and shows
+      only what answers.</td></tr>
+  <tr><th>Fans</th><td>Current speed, shown as "off" when the fans are genuinely
+      stopped - which on a cool Mac they usually are.</td></tr>
+</table>
+
+<h2>Nothing invented, nothing sent</h2>
+<p>Readings that a given Mac cannot provide are simply absent rather than filled with
+plausible-looking numbers. There is no network code in the app at all: no analytics,
+no accounts, no background updates. Every reading comes from the machine it runs on and
+stays there. See the <a href="privacy.html">privacy policy</a>.</p>
+
+<h2>Where to get it</h2>
+<p>This site carries the full version, with every metric listed above and the built-in
+<a href="stress-test.html">stress test</a>. SiMon is also on the Mac App Store, where the
+sandbox rules out the sensors that require direct hardware access - that copy shows the
+processor, memory, graphics and a single die temperature.</p>
+
 <ul class="links">
-  <li><a href="support.html">Support</a></li>
-  <li><a href="changelog.html">What's New</a></li>
-  <li><a href="privacy.html">Privacy Policy</a></li>
-  <li><a href="stress-test.html">The stress test</a></li>
+  <li><a href="https://github.com/Wolk88/simon-site/releases/latest">Download the latest version</a></li>
+  <li><a href="changelog.html">What's new</a></li>
+  <li><a href="support.html">Support and troubleshooting</a></li>
+  <li><a href="stress-test.html">About the stress test</a></li>
+  <li><a href="privacy.html">Privacy policy</a></li>
 </ul>
-<footer>Requires macOS 14 or later and a Mac with Apple Silicon.</footer>
+
+<footer>
+SiMon - System Monitor for Apple Silicon Macs.
+Written by Mikhail Volkovnikov. <a href="mailto:simon_app@mail.ru">simon_app@mail.ru</a>
+</footer>
+
 </body>
 </html>

@@ -43,6 +43,21 @@ The version you are running is shown at the bottom of Settings, under General.</
 <p>Older entries describe every feature SiMon has had. Which of them your copy includes
 depends on where it came from; Settings always shows what is actually available.</p>
 
+<h2>Version 1.4.0</h2>
+<p class="date">27 August 2026</p>
+
+<h3>Core groups are named by the chip, not by habit</h3>
+<p>The rows of per-core bars used to be labelled E and P, which was true for the M1
+through M4 and wrong everywhere else. An M5 Pro has no efficiency cores at all: its
+levels are Performance and Super, so twelve performance cores were sitting under the
+letter E. SiMon now asks the system what its core levels are called and labels them
+accordingly.</p>
+
+<h3>More than two kinds of core</h3>
+<p>The M6 has three core levels rather than two, and the panel draws a group for each
+one instead of assuming there are exactly two. Machines with a single level are drawn
+as one group.</p>
+
 <h2>Version 1.3.1</h2>
 <p class="date">14 August 2026</p>
 

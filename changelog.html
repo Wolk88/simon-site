@@ -43,6 +43,36 @@ The version you are running is shown at the bottom of Settings, under General.</
 <p>Older entries describe every feature SiMon has had. Which of them your copy includes
 depends on where it came from; Settings always shows what is actually available.</p>
 
+<h2>Version 1.7.0</h2>
+<p class="date">16 November 2026</p>
+<p>Like 1.6.0, this release is for the download from this site only.</p>
+
+<h3>Presets</h3>
+<p>Settings, Fans has a Presets block. A preset keeps the mode, the speeds or the curve,
+and what the fans do when the Mac is cool. Automatic, Quiet, Balanced and Cool are built
+in; "Save current settings" adds your own.</p>
+
+<h3>Rules that switch presets for you</h3>
+<p>A rule is a condition and a preset: on battery, on power adapter, Low Power Mode is
+on, or a particular app is running. The first rule in the list whose condition holds
+decides the preset. While a rule is in effect your own settings are set aside and locked
+in the window; they come back when the rule no longer applies, also after a restart of
+SiMon. Only the battery rule has been tried on a real machine so far.</p>
+
+<h3>Fan control from the terminal</h3>
+<p>The running app takes commands through its own binary,
+<code>/Applications/SiMon.app/Contents/MacOS/SiMon</code>:</p>
+<p><code>--fan status</code> shows the fans, the temperature, the mode and the rule in
+effect; <code>--fan presets</code> lists presets; <code>--fan preset &lt;name&gt;</code>
+applies one; <code>--fan auto</code> hands the fans back to macOS;
+<code>--fan speed &lt;rpm&gt;</code> holds a constant speed; <code>--fan rules on|off</code>
+switches the rules. The speed is kept within each fan's range, and the exit code is 0
+on success.</p>
+
+<h3>Fixed</h3>
+<p>After switching from By temperature to Constant, the status line kept the last message
+from the curve.</p>
+
 <h2>Version 1.6.0</h2>
 <p class="date">16 November 2026</p>
 <p>This release is for the download from this site. The Mac App Store edition has no

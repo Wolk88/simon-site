@@ -43,6 +43,52 @@ The version you are running is shown at the bottom of Settings, under General.</
 <p>Older entries describe every feature SiMon has had. Which of them your copy includes
 depends on where it came from; Settings always shows what is actually available.</p>
 
+<h2>Version 1.6.0</h2>
+<p class="date">16 November 2026</p>
+<p>This release is for the download from this site. The Mac App Store edition has no
+access to the fans, so nothing here applies to it.</p>
+
+<h3>SiMon can drive the fans</h3>
+<p>Settings, Fans has a new block. After you install a small system helper (macOS asks
+for permission once), three modes are available: Automatic leaves the fans to macOS,
+Constant holds the speed you set, By temperature follows a curve.</p>
+
+<h3>Curves and profiles</h3>
+<p>Quiet, Balanced and Cool are ready-made curves; Custom is yours. Points on the graph
+can be dragged, and a double-click adds one. Two sliders set how fast the fans speed up
+and slow down, and the hysteresis keeps them from hunting around a point. The curve
+follows the hottest core, read once a second.</p>
+
+<h3>Fans can stop when the Mac is cool</h3>
+<p>Below the curve the fans can go back to macOS, idle at their minimum, or stop below a
+temperature you choose between 35 and 55 degrees. A stopped fan needs a few seconds to
+spin up, so a sudden heavy load heats the chip more than with idling fans.</p>
+
+<h3>Try a curve before you trust it</h3>
+<p>Two buttons under the graph run a minute of full load: one with your curve, one with
+macOS in charge. Both runs are drawn on the same chart with the peak temperature, how
+soon the fans reached half speed and how much the processor slowed down. On the
+MacBook Pro with M5 Pro this was written on, the Balanced profile lost about 1% of
+processor speed over the minute and macOS about 9%.</p>
+
+<h3>What keeps it safe</h3>
+<p>The helper does not trust the app. If SiMon quits or hangs, the fans go back to
+macOS within seconds. If the hottest core reaches the safety limit (95 degrees, and you
+can lower it), the helper runs the fans at full speed until the chip cools down, and
+ignores everything else meanwhile. It refuses to stop a fan on a chip warmer than 60
+degrees. Before the first use on a Mac it runs a short check that raises the fan speed
+a little and confirms the firmware obeys; if it does not, SiMon stays in Automatic and
+says why.</p>
+<p>Fan control was tested on one machine, a MacBook Pro with M5 Pro. Other chips are
+covered by the check above and by a workaround for M4 that has not been run on a real
+M4 yet.</p>
+
+<h3>Updates install from the panel</h3>
+<p>The line about a new version now has an Update button. SiMon downloads the disk
+image from the releases page, installs it only if it is signed by the developer and
+notarised by Apple, and restarts. A switch in Settings, General does this without
+asking; it is off by default.</p>
+
 <h2>Version 1.5.0</h2>
 <p class="date">7 November 2026</p>
 

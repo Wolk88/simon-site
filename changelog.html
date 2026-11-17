@@ -43,6 +43,19 @@ The version you are running is shown at the bottom of Settings, under General.</
 <p>Older entries describe every feature SiMon has had. Which of them your copy includes
 depends on where it came from; Settings always shows what is actually available.</p>
 
+<h2>Version 1.7.1</h2>
+<p class="date">17 November 2026</p>
+
+<h3>Fan control survives sleep</h3>
+<p>In 1.6.0 and 1.7.0 the fan mode quietly went back to Automatic after the Mac slept:
+the helper handed the fans to macOS when the app stopped responding, which is correct,
+but the app then took that as a reason to switch the mode off for good. Now the mode you
+chose is switched back on after wake. If you set a constant speed or a curve in one of
+those versions and found Automatic selected later, this was the cause; choose your mode
+again once.</p>
+<p>The power adapter rule and the rule for a running app have now been tried on a real
+machine as well.</p>
+
 <h2>Version 1.7.0</h2>
 <p class="date">16 November 2026</p>
 <p>Like 1.6.0, this release is for the download from this site only.</p>

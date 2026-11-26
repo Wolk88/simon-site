@@ -43,6 +43,59 @@ The version you are running is shown at the bottom of Settings, under General.</
 <p>Older entries describe every feature SiMon has had. Which of them your copy includes
 depends on where it came from; Settings always shows what is actually available.</p>
 
+<h2>Version 1.8.0</h2>
+<p class="date">26 November 2026</p>
+<p>This release is for the download from this site. Power, the list of apps, the speed
+measurements and everything about fans need access the App Store does not allow.</p>
+
+<h3>Power</h3>
+<p>The panel has a Power row: how many watts the whole Mac is drawing, with a graph, the
+share of the graphics processor, and the average, the peak and the watt-hours over the
+time the graph covers. It can also be shown in the menu bar; that is off by default and
+is switched on in Settings, Power. I could not check whether the reading includes
+battery charging, so treat the number with care while the battery is charging.</p>
+
+<h3>Network and disk</h3>
+<p>Download and upload speed and disk read and write speed, in the panel and optionally
+in the menu bar. Both are off by default; see Settings, Net &amp; disk. Only Wi-Fi, Ethernet
+and a tethered phone are counted, so traffic through a VPN is not counted twice.</p>
+<p>The same section has two buttons. "Measure connection speed" runs the test that
+comes with macOS. "Measure disk speed" writes a 2 GB
+file to the startup disk, reads it back and deletes it; it refuses to start when free
+space is short.</p>
+
+<h3>The heaviest apps</h3>
+<p>At the bottom of the panel there is a list of the five apps using the most processor
+time or memory. Helper processes are counted with their app. System services are not
+listed: macOS does not let an app read them without administrator rights. The list is
+read only while the panel is open and can be switched off in Settings, General.</p>
+
+<h3>Alerts</h3>
+<p>SiMon can send a notification when the chip stays above 90° for five minutes, when
+swap grows by 2 GB within ten minutes, or when macOS reports memory pressure. Each alert
+comes once per episode and not more often than once in half an hour. The thresholds, each
+alert separately and all of them together are in Settings, Alerts. macOS asks for
+permission to show notifications the first time this version starts.</p>
+
+<h3>Detailed log</h3>
+<p>SiMon now writes one CSV file per day, a line every ten seconds: average and peak
+load, memory, power, the highest temperature and fan speed. The files are kept for 7, 30
+or 90 days, take about a megabyte a day and never leave the Mac. The log is on by
+default; the switch and the folder are in Settings, General, Log.</p>
+
+<h3>Fans</h3>
+<p>Two new conditions for rules: a process with a given name is running, which also
+covers command-line tools and not only apps, and the load on the graphics processor has
+stayed above a given percentage.</p>
+<p>"Speed up ahead of heat" is an experiment and is off by default. When the Mac draws
+more than the chosen number of watts for a few seconds, the fans are raised a little
+before the temperature follows. On my M5 Pro the effect is modest. It does not act
+while the battery is charging.</p>
+
+<h3>Fixed</h3>
+<p>Every change of the refresh interval in Settings started one more daily check for a new
+version on GitHub.</p>
+
 <h2>Version 1.7.1</h2>
 <p class="date">17 November 2026</p>
 
